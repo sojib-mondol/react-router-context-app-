@@ -3,8 +3,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home';
 import Login from './components/Login';
+import Oders from './components/Oders';
 import Register from './components/Register';
 import Main from './layout/Main';
+import PrivateRoute from './routes/PrivateRoute';
 
 function App() {
 
@@ -24,6 +26,10 @@ function App() {
         {
           path: '/register',
           element: <Register></Register>
+        },
+        {
+          path: '/orders',
+          element: <PrivateRoute><Oders></Oders></PrivateRoute>
         }
       ]
     },
